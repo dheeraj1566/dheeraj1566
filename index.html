@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <input type="text"  placeholder="Enter number">
+        <button class="calculate">calculate</button>
+    </div>
+
+    <script>
+    // const arr=[0,0,0,1,1,1]
+    // let answer="";
+
+    // for(let i=0; i>arr.length;i++)
+    // {
+    //     if (arr[i]===1) {
+    //         answer=i;
+    //         break;
+    //     }
+    // }
+    // console.log(answer);
+    function rearrangeAlternately(arr) {
+    // Sort the array in non-decreasing order
+    arr.sort((a, b) => a - b);
+
+    const result = [];
+    let start = 0;
+    let end = arr.length - 1;
+
+    while (start <= end) {
+        result.push(arr[end]); 
+        if (start !== end) {
+            result.push(arr[start]);  
+        }
+        start++;
+        end--;
+    }
+
+    return result;
+}
+
+const arr = [1, 2, 3, 4, 5, 6, 7];
+const rearrangedArr = rearrangeAlternately(arr);
+console.log(rearrangedArr);  // Output: [7, 1, 6, 2, 5, 3, 4]
+
+    </script>
+</body>
+</html>
